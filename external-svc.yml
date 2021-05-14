@@ -1,0 +1,11 @@
+# This will create svc that map service in another namespace for its access purpose
+kind: Service
+apiVersion: v1
+metadata:
+  name: prom-i3-mon-svc
+  namespace: your-namespace
+spec:
+  type: ExternalName
+  externalName: i3-monitoring-prometheus-server.i3-monitoring.svc.cluster.local
+  ports:
+  - port: 80
